@@ -80,6 +80,10 @@ class Bulgaria extends AbstractProvider
             $this->addHoliday(new Holiday('liberationDay', [
                 'bg' => 'Ден на Освобождението на България от османско иго',
             ], new \DateTime("{$this->year}-03-03", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale));
+
+            $this->addHoliday(new Holiday('educationCultureSlavonicLiteratureDay', [
+                'bg' => 'Ден на българската просвета и култура и на славянската писменост',
+            ], new \DateTime("{$this->year}-05-24", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale));
         }
 
         $this->addHoliday(new Holiday('stGeorgesDay', [

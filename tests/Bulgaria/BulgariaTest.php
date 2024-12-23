@@ -34,10 +34,12 @@ class BulgariaTest extends BulgariaBaseTestCase implements ProviderTestCase
         $holidays = [
             'newYearsDay',
             'internationalWorkersDay',
+            'stGeorgesDay',
         ];
 
         if ($this->year >= 1990) {
             $holidays[] = 'liberationDay';
+            $holidays[] = 'educationCultureSlavonicLiteratureDay';
         }
 
         $this->assertDefinedHolidays($holidays, self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
