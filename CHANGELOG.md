@@ -17,7 +17,7 @@ changes.
 - Holiday calculation methods in providers are now protected instead of private 
   to allow use in [custom providers](https://www.yasumi.dev/docs/cookbook/custom_provider/).
   [\#331](https://github.com/azuyalabs/yasumi/issues/331)
-- For Argentina, Carneval Monday and Tuesday, and Good Friday are considered official holidays. [\#360](https://github.com/azuyalabs/yasumi/pull/360) ([c960657](https://github.com/c960657))
+- For Argentina, Carnival Monday and Tuesday, and Good Friday are considered official holidays. [\#360](https://github.com/azuyalabs/yasumi/pull/360) ([c960657](https://github.com/c960657))
 
 ### Fixed
 
@@ -43,22 +43,22 @@ changes.
 
 - Refactor the rules for calculating holidays in South Korea based on the history of holiday changes.
   ([#314](https://github.com/azuyalabs/yasumi/issues/314)) [barami](https://github.com/barams@gmail.com)
-- Update links to related documentation in the South Korea provider's note and added links to conversion utilities.
+- Update links to related documentation in the South Korean provider's note and add links to conversion utilities.
   [\#314](https://github.com/azuyalabs/yasumi/pull/314) ([barami](https://github.com/barami))
 - Optimize the method for the Emperor's birthday calculation in Japan.
-- For Croatia, extract Day of Antifascist Struggle calculation to a private method and simplify Statehood Day calculation
+- For Croatia, extract the  Day of Antifascist Struggle calculation to a private method and simplify the Statehood Day calculation
   to make it more concise.
-- Simplify the conditions for the Coming of Age day (Japan) calculation.
-- Simplify the calculation of Carnival in Argentina, Brazil and the Netherlands to reduce duplication.
+- Simplify the conditions for the Coming of Age Day (Japan) calculation.
+- Simplify the calculation of Carnival in Argentina, Brazil, and the Netherlands to reduce duplication.
 - Avoid silent exceptions by throwing a new one from the previous exception.
 
 ### Fixed
 
-- For South Korea, some of the past dates for Buddha's Day, Chuseok, Armed Forces Day
-  and United Nations Day were incorrectly calculated during for certain periods. [\#314](https://github.com/azuyalabs/yasumi/pull/314) ([barami](https://github.com/barami))
-- The holiday `twoDaysLaterNewYearsDay` of South Korea has been removed from 1990, however the unit test for the name
+- For South Korea, some of the past dates for Buddha's Day, Chuseok, Armed Forces Day, 
+  and United Nations Day were incorrectly calculated for certain periods. [\#314](https://github.com/azuyalabs/yasumi/pull/314) ([barami](https://github.com/barami))
+- The holiday `twoDaysLaterNewYearsDay` of South Korea has been removed from 1990, however, the unit test for the name
   and holiday type allowed the possible testing range to include the year 1990.
-- New Years Day tests for South Korea were failing due to incorrect date checks.
+- New Year's Day tests for South Korea were failing due to incorrect date checks.
 - The Easter Date calculation resulted in wrong values for the year 2025, due to an incorrect rounding for the lunar
   correction when the calendar extension is not used. [#326](https://github.com/azuyalabs/yasumi/pull/326) ([rChassat](https://github.com/rChassat))
 
@@ -72,7 +72,7 @@ changes.
 - The PHP [Infection](https://infection.github.io/) test package as it was hardly used.
 - Unit tests from a Git export to reduce the export size. [#323](https://github.com/azuyalabs/yasumi/pull/323) ([fezfez](https://github.com/fezfez))
 - Checks for superfluous naming as we follow PER which supports such convention.
-- MacOS from testing matrix as it returns errors (requires further investigation).
+- MacOS from the testing matrix as it returns errors (requires further investigation).
 
 ## [2.6.0] - 2023-04-27
 
@@ -86,8 +86,8 @@ changes.
 - Slovak translations for a couple of popular holidays. [\#298](https://github.com/azuyalabs/yasumi/pull/298) ([Jozef Grencik](https://www.github.com/jozefgrencik))
 - All examples as shown on the documentation site as a convenience to developers who like to have all information in a
   single place.
-- Included an `.editorconfig` file to maintain a consistent style for developers using different text editors.
-- The `ext-intl` extension as a required extension. [\#306](https://github.com/azuyalabs/yasumi/pull/306) ([Freshleaf Media](https://www.github.com/freshleafmedia))
+- Included a `.editorconfig` file to maintain a consistent style for developers using different text editors.
+- The `ext-intl` extension is required. [\#306](https://github.com/azuyalabs/yasumi/pull/306) ([Freshleaf Media](https://www.github.com/freshleafmedia))
 - An exception is thrown in case the time stamp of the start and end date in the `dateTimeBetween` method can't be established.
 - Checks in case getting transition details or a date interval subtraction fails.
 
@@ -164,14 +164,14 @@ changes.
 
 ### Changed
 
-- Revised rules to calculate substitution holidays of South Korea to apply the newly enacted law on June
+- Revised rules to calculate substitution holidays in South Korea to apply the newly enacted law on June
     2021. [\#255](https://github.com/azuyalabs/yasumi/pull/255) ([barami](https://github.com/barami)).
-- Separate `calculateSubstituteHolidays` method of South Korea Provider to `calculateSubstituteHolidays`
+- Separate the `calculateSubstituteHolidays` method of South Korean Provider to `calculateSubstituteHolidays`
   and `calculateOldSubstituteHolidays`
   . [\#255](https://github.com/azuyalabs/yasumi/pull/255) ([barami](https://github.com/barami))
-- Refactored the tests of South Korea provider to testing substitution
+- Refactored the tests of South Korea providers to testing substitution
   holidays. [\#255](https://github.com/azuyalabs/yasumi/pull/255) ([barami](https://github.com/barami)).
-- Moved the United Kingdom Spring Bank Holiday to June 2nd and added Platinum Jubilee bank holiday on June 3rd
+- Moved the United Kingdom Spring Bank Holiday to June 2nd and added the Platinum Jubilee bank holiday on June 3rd
   for [\#270](https://github.com/azuyalabs/yasumi/issues/270) ([Dan](https://github.com/dch-dev)).
 
 - Provider tests must implement the `ProviderTestCase` interface to ensure all required test methods are defined.
@@ -188,11 +188,11 @@ changes.
 - Corpus Christi (German: 'Fronleichnam') was classified as `Other` for states celebrating this day. This was
   incorrect (or officially changed)
   and has been altered to `Official`. [\#252](https://github.com/azuyalabs/yasumi/issues/252).
-- The test for the USA in that juneteenthDay was considered for all years: it is only celebrated since 2021.
+- The test for the USA on that juneteenthDay was considered for all years: it has only celebrated since 2021.
 - Definition of Canada Day in Canada [\#257](https://github.com/azuyalabs/yasumi/pull/257) in that, Canada Day is July 1
-  if that day is not Sunday, and July 2 if July 1 is a Sunday.([Owen V. Gray](https://github.com/adrx)).
+  if that day is not a Sunday, and July 2 if July 1 is a Sunday. ([Owen V. Gray](https://github.com/adrx)).
 
-- Reverted the visibility of the `AbstractProvider->getHolidaDates()` method as it incorrectly was set to `protectecd`.
+- Reverted the visibility of the `AbstractProvider->getHolidaDates()` method as it incorrectly was set to `protected`.
 
 ### Removed
 
@@ -215,7 +215,7 @@ changes.
 
 ### Changed
 
-- Rescheduled exceptional Japanese holidays for Olympic Games 2020 after
+- Rescheduled exceptional Japanese holidays for Olympic Games 2020 After
   COVID-19 [\#240](https://github.com/azuyalabs/yasumi/pull/240) ([tanakahisateru](https://github.com/tanakahisateru))
 - Some improvements/refactoring of the Swiss holiday providers (including source
   references) [\#233](https://github.com/azuyalabs/yasumi/pull/233) ([Quentin Ligier](https://github.com/qligier))
@@ -225,14 +225,14 @@ changes.
 - Upgraded PHPUnit's XML configuration.
 - Refactored removing the magic numbers for the lower and upper limits of the calendar year.
 - Reformatted code using new/updated Code Styling rules.
-- Hardened error handling of json functions.
+- Hardened error handling of JSON functions.
 - Updated Copyright year.
 
 ### Fixed
 
 - The test for North West Territories (Canada) in that the National Indigenous Peoples Day was considered for all years:
-  it is only celebrated since 1996.
-- The test for NovaScotia (Canada) in that novaScotiaHeritageDay was considered for all years: it is only celebrated
+  it has only been celebrated since 1996.
+- The test for NovaScotia (Canada) in that novaScotiaHeritageDay was considered for all years: it has only been celebrated
   since 2015.
 - The test for Ontario (Canada) in that IslanderDay was considered for all years: it is only celebrated since 2009.
 - The test for Marine Day (Japan) as the rescheduled day was moved to 2021 (due to the COVID-19 pandemic).
@@ -243,7 +243,7 @@ changes.
 - Incorrect invocation of `Fribourg::calculateBerchtoldsTag()` and `Fribourg::calculateDecember26th` (Switzerland)
 - Use proper parameter and return type hinting
 - Replaced the `mt_rand` function with the `random_int` function as it is cryptographically insecure.
-- Some static functions were used as if they are object functions.
+- Some static functions were used as if they were object functions.
 
 ### Removed
 
@@ -268,22 +268,22 @@ changes.
   Lithuania [\#227](https://github.com/azuyalabs/yasumi/pull/227) ([norkunas](https://github.com/norkunas))
 - Catholic Christmas Day is a new official holiday since 2017 in the
   Ukraine. [\#202](https://github.com/azuyalabs/yasumi/pull/202)
-- Additional Dates for Australia/Victoria:AFL Grand Final
+- Additional Dates for Australia/Victoria: AFL Grand Final
   Friday [\#190](https://github.com/azuyalabs/yasumi/pull/190) ([brucealdridge](https://github.com/brucealdridge))
 - Substituted holidays (holidays that fall in the weekend) for
   Australia. [\#201](https://github.com/azuyalabs/yasumi/pull/201) ([c960657](https://github.com/c960657))
 - Added New Years Eve to
   Germany [\#226](https://github.com/azuyalabs/yasumi/pull/226) ([Patrick-Root](https://github.com/Patrick-Root))
 - Day of Liberation (Tag der Befreiung) is a one-time official holiday in 2020 in Berlin (Germany).
-- Catalan translations for holidays in Catalonia, Valencian Community, Balearic Islands and
+- Catalan translations for holidays in Catalonia, the Valencian Community, the Balearic Islands and
   Aragon [\#189](https://github.com/azuyalabs/yasumi/pull/189) ([c960657](https://github.com/c960657))
 - Added American English spelling for Labour Day [\#216](https://github.com/azuyalabs/yasumi/issues/216)
-- Added French translation for Second Christmas
+- Added French translation for the Second Christmas
   Day [\#188](https://github.com/azuyalabs/yasumi/pull/188) ([Arkounay](https://github.com/Arkounay))
 
 - Added accessor methods Holiday::getKey() and SubstituteHoliday::
   getSubstitutedHoliday() [\#220](https://github.com/azuyalabs/yasumi/pull/220)+[\#221](https://github.com/azuyalabs/yasumi/pull/221) ([c960657](https://github.com/c960657))
-- Added missing return (correct) and parameter types in various methods.
+- Added missing returns (correct) and parameter types in various methods.
 
 ### Changed
 
